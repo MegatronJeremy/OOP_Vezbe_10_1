@@ -15,7 +15,7 @@ public:
     Lovac(Boja boja, Polje poljeNaKomeSeNalazi) : Figura(boja, poljeNaKomeSeNalazi) {}
     char oznaka() const override {return 'L';}
 
-    virtual void pomeriNa(const Polje &p) override {
+    void pomeriNa(const Polje &p) override {
         if (!(p/this->polje)) throw GPogresanPotez();
         this->polje = p;
     }

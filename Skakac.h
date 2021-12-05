@@ -15,7 +15,7 @@ public:
     Skakac(Boja boja, Polje poljeNaKomeSeNalazi) : Figura(boja, poljeNaKomeSeNalazi) {}
     char oznaka() const override {return 'S';}
 
-    virtual void pomeriNa(const Polje &p) override {
+    void pomeriNa(const Polje &p) override {
         if (!(abs(p.dohvRed() - this->polje.dohvRed()) + abs(p.dohvKolonu() - this->polje.dohvKolonu()) == 3
             && p.dohvKolonu() != this->polje.dohvKolonu() && p.dohvRed() != this->polje.dohvRed())) throw GPogresanPotez();
         this->polje = p;

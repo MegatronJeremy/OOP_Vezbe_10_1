@@ -24,10 +24,6 @@ int main() {
 
         Sah sah;
 
-        sah += t1;
-        sah += l1;
-        sah += s1;
-
         cout << sah;
 
         while(true) {
@@ -38,6 +34,8 @@ int main() {
                 cout << endl << "Unesite kolonu i red polja sa koga pomerate figuru: ";
                 cin >> kolona >> red;
 
+                if (red == -1) break;
+
                 Polje sa(kolona, red);
 
                 cout << "Unesite kolonu i red polja na koga pomerate figuru: ";
@@ -45,7 +43,7 @@ int main() {
 
                 Polje na(kolona, red);
 
-                sah.pomeri(sa, na);
+                sah(sa, na);
 
                 cout << "\x1B[2J\x1B[H"; // cisti konzolu
                 cout << sah;
